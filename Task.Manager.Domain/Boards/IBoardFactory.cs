@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Task.Manager.Domain.Boards.ValueObjects;
 
 namespace Task.Manager.Domain.Boards
 {
     public interface IBoardFactory
     {
-        IBoard NewBoardInstance()
+        Board CreateBoard(Name name);
     }
 }
