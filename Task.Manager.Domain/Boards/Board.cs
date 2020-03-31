@@ -4,7 +4,7 @@ using Task.Manager.Domain.Tasks.ValueObjects;
 
 namespace Task.Manager.Domain.Boards
 {
-    public class Board
+    public class Board : IAggregateRoot
     {
         public BoardId Id { get; set; }
 

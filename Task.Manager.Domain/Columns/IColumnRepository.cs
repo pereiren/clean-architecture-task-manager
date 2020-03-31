@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Task.Manager.Domain.Columns
+﻿namespace Task.Manager.Domain.Columns
 {
-    public interface IColumnRepository
+    public interface IColumnRepository : IRepository<Column>
     {
-
     }
 }

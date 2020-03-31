@@ -1,6 +1,7 @@
 ﻿namespace Task.Manager.Domain.Tasks
 {
-    public interface ITaskRepository
+    public interface ITaskRepository : IRepository<Task>
     {
+
     }
 }

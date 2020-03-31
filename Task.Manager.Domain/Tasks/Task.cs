@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Task.Manager.Domain.Tasks.ValueObjects;
+﻿using Task.Manager.Domain.Tasks.ValueObjects;
 
 namespace Task.Manager.Domain.Tasks
 {
-    public class Task
+    public class Task : IAggregateRoot
     {
         public TaskId TaskId { get; set; }
+        
         public Summary Summary { get; set; }
+        
         public Description Description { get; set; }
 
         public AcceptanceCriteria AcceptanceCriteria { get; set; }

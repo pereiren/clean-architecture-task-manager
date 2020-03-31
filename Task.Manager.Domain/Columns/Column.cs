@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Task.Manager.Domain.Boards.ValueObjects;
 using Task.Manager.Domain.Columns.ValueObjects;
+using Task.Manager.Domain.Tasks.ValueObjects;
 
 namespace Task.Manager.Domain.Columns
 {
-    public class Column
+    public class Column : IAggregateRoot
     {
+        public BoardId BoardId { get; set; }
+
         public ColumnId ColumnId { get; set; }
         
         public Title Name { get; set; }

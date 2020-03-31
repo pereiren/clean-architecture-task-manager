@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Task.Manager.Domain\Task.Manager.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

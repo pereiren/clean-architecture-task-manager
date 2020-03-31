@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Task.Manager.Domain.Tasks.ValueObjects
+﻿namespace Task.Manager.Domain.Tasks.ValueObjects
 {
     public enum Priority
     {
