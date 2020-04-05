@@ -1,34 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Task.Manager.Domain.Boards;
+using Task.Manager.Domain.Boards.ValueObjects;
 
 namespace Task.Manager.Infrastructure.Repositories
 {
     public class BoardRepository : IBoardRepository
     {
-
-
-        public void Add(Board entity)
+        public System.Threading.Tasks.Task Add(Board entity)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Board> Find(Board spec)
+        public IEnumerable<Board> FindAll()
+        {
+            var board = new Board { Columns = new ColumnCollection(), Id = new BoardId(Guid.NewGuid()), Name = new Name("test"), Tasks = new TaskCollection() };
+
+            List<Board> boards = new List<Board>();
+            boards.Add(board);
+
+            return boards;
+        }
+
+        public Task<Board> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Board FindById(Guid id)
+        public Task<Board> FindOne(Board spec)
         {
             throw new NotImplementedException();
         }
 
-        public Board FindOne(Board spec)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Board entity)
+        public System.Threading.Tasks.Task Remove(Board entity)
         {
             throw new NotImplementedException();
         }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Task.Manager.Application.UseCases
+namespace Task.Manager.Application.Boundaries
 {
-    class GetBoards
+    public interface IUseCaseOutputPort
     {
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
+using FluentMediator;
 using Microsoft.AspNetCore.Mvc;
 using Task.Manager.Application.Boundaries.GetBoards;
 
@@ -14,17 +10,21 @@ namespace Task.Manager.API.UseCases.GetBoards
     public sealed class BoardsController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IPresenter<GetBoardsOutput> _presenter;
 
-        public BoardsController(IMediator mediator)
+        public BoardsController(IMediator mediator, IPresenter<GetBoardsOutput> presenter)
         {
             _mediator = mediator;
+            _presenter = presenter;
         }
 
         [HttpGet(Name ="GetBoards")]
-        public async Task<IAsyncResult> Get()
+        public async Task<IActionResult> Get()
         {
             var input = new GetBoardsInput();
+            await _mediator.PublishAsync(input);
 
+            return _presenter.ViewModel;
         }
     }
 }

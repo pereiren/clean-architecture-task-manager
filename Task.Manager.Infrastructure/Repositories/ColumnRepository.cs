@@ -1,32 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Task.Manager.Domain.Columns;
 
 namespace Task.Manager.Infrastructure.Repositories
 {
     public class ColumnRepository : IColumnRepository
     {
-        public void Add(Column entity)
+        public System.Threading.Tasks.Task Add(Column entity)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Column> Find(Column spec)
+        public IEnumerable<Column> FindAll()
         {
             throw new NotImplementedException();
         }
 
-        public Column FindById(Guid id)
+        public Task<Column> FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Column FindOne(Column spec)
+        public Task<Column> FindOne(Column spec)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(Column entity)
+        public System.Threading.Tasks.Task Remove(Column entity)
         {
             throw new NotImplementedException();
         }
