@@ -16,9 +16,10 @@ namespace Task.Manager.Infrastructure.Repositories
         public IEnumerable<Board> FindAll()
         {
             var board = new Board { Columns = new ColumnCollection(), Id = new BoardId(Guid.NewGuid()), Name = new Name("test"), Tasks = new TaskCollection() };
-
+            var board2 = new Board { Columns = new ColumnCollection(), Id = new BoardId(Guid.NewGuid()), Name = new Name("test2"), Tasks = new TaskCollection() };
             List<Board> boards = new List<Board>();
             boards.Add(board);
+            boards.Add(board2);
 
             return boards;
         }

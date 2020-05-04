@@ -13,5 +13,7 @@ namespace Task.Manager.Domain.Boards.ValueObjects
 
             _boardId = boardId;
         }
+
+        public Guid ToGuid() => this._boardId;
     }
 }

@@ -15,5 +15,8 @@ namespace Task.Manager.Domain.Boards.ValueObjects
 
             _text = text;
         }
+
+        public override string ToString() => this._text;
+
     }
 }

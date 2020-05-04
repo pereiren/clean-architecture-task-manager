@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Task.Manager.Domain.Boards;
+﻿using Task.Manager.Domain.Boards;
 using Task.Manager.Domain.Boards.ValueObjects;
 using Task.Manager.Domain.Columns;
 using Task.Manager.Domain.Columns.ValueObjects;

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Task.Manager.Domain;
 using Task.Manager.Domain.Tasks;
 
 namespace Task.Manager.Infrastructure.Repositories

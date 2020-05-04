@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using FluentMediator;
 using Microsoft.AspNetCore.Mvc;
+using Task.Manager.Application.Boundaries;
 using Task.Manager.Application.Boundaries.GetBoards;
 
 namespace Task.Manager.API.UseCases.GetBoards
@@ -22,9 +23,10 @@ namespace Task.Manager.API.UseCases.GetBoards
         public async Task<IActionResult> Get()
         {
             var input = new GetBoardsInput();
-            await _mediator.PublishAsync(input);
 
-            return _presenter.ViewModel;
+            var outputPort = await _mediator.SendAsync<IUseCaseOutputPort>(input);
+
+            return  _presenter.Output((GetBoardsOutput)outputPort);
         }
     }
 }

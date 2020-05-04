@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Task.Manager.Application.Boundaries;
+﻿using Task.Manager.Application.Boundaries;
 using Task.Manager.Application.Boundaries.GetBoards;
 using Task.Manager.Application.Services.Interfaces;
 
@@ -11,28 +7,23 @@ namespace Task.Manager.Application.UseCases
     public class GetBoardsUseCase : IUseCase<GetBoardsInput>
     {
         private readonly IBoardService _boardService;
-        private readonly IPresenterOutputPort<GetBoardsOutput> _presenterOutputPort;
+        private readonly IUseCaseOutputPort _outputPort;
 
-        public GetBoardsUseCase(IBoardService boardService, IPresenterOutputPort<GetBoardsOutput> presenterOutputPort)
+        public GetBoardsUseCase(IBoardService boardService, IUseCaseOutputPort outputPort)
         {
             _boardService = boardService;
-            _presenterOutputPort = presenterOutputPort;
+            _outputPort = outputPort;
         }
 
-        public async System.Threading.Tasks.Task Handle(GetBoardsInput useCaseInputPort)
+        public async System.Threading.Tasks.Task<IUseCaseOutputPort> Handle(GetBoardsInput useCaseInputPort)
         {
-            try
-            {
-                var boards = await _boardService.GetBoards();
+            IUseCaseOutputPort outputPort = null;
 
-                var output = new GetBoardsOutput(boards);
-                _presenterOutputPort.Output(output);
+            var boards = await _boardService.GetBoards();
 
-            }
-            catch (Exception ex)
-            {
-                
-            }
+            outputPort = new GetBoardsOutput(boards);
+            
+            return outputPort;
         }
     }
 }

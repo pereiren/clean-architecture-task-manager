@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Task.Manager.Application.Services.Interfaces;
 using Task.Manager.Domain.Boards;
@@ -18,7 +16,7 @@ namespace Task.Manager.Application.Services.Implementations
 
         public async Task<IEnumerable<Board>> GetBoards()
         {
-            var boards = _boardRepository.FindAll();
+            var boards = await System.Threading.Tasks.Task.Run(() => _boardRepository.FindAll());
 
             return boards;
         }

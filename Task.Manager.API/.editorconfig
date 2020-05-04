@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# S927: parameter names should match base declaration and other partial definitions
+dotnet_diagnostic.S927.severity = none
